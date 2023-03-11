@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script defer src="./js/main.js"></script>
+
+	<title>Список сотрудников</title>
+</head>
+<body>
+	<main class="main">
+		<section class="form">
+			<div class="form__wrapper">
+				<h2 class="form__title title">Новый сотрудник</h2>
+
+				<form action="#" method="POST" class="form__elements">
+					<div class="form__item item">
+						<span class="item__title title">Имя*</span>
+
+						<label for="name" class="form__label label">
+							<input type="text" id="name" name="name" class="form__input" placeholder="Иван">
+						</label>
+					</div>
+
+					<div class="form__item item">
+						<span class="item__title title">Фамилия*</span>
+
+						<label for="surname" class="form__label label">
+							<input type="text" id="surname" name="surname" class="form__input" placeholder="Иванов">
+						</label>
+					</div>
+						
+					<div class="form__item item">
+						<span class="item__title title">Возраст*</span>
+
+						<label for="age" class="form__label label">
+							<input type="text" id="age" name="age" class="form__input" placeholder="35">
+						</label>
+					</div>
+
+					<div class="form__item item item-radio">
+						<span class="item__title title">Пол*</span>
+
+						<div class="form__gender">
+							<label for="male" class="form__label label checkbox">
+								<span>Мужчина</span>
+
+								<input value="male" id="male" type="radio" name="gender" class="form__radio">
+								<div class="checkbox__mark"></div>
+							</label>
+
+							<label for="female" class="form__label label checkbox">
+								<span>Женщина</span>
+
+								<input value="female" id="female" type="radio" name="gender" class="form__radio">
+								<div class="checkbox__mark"></div>
+							</label>
+						</div>
+					</div>
+
+					<div class="form__item item">
+						<span class="item__title title">Позиция*</span>
+						<label for="position" class="form__label label">
+							<select class="form__select" name="position" id="position">
+								<option value="" selected disabled>Выберите позицию сотрудника</option>
+								<option value="fe">Front-end</option>
+								<option value="be">Back-end (+10.000 руб.)</option>
+								<option value="fs">Full-stack (+30.000 руб.)</option>
+							</select>
+						</label>
+					</div>
+						
+					<div class="form__item item">
+						<span class="item__title title">Уровень*</span>
+						<label for="postjob" class="form__label label">
+							<select class="form__select" name="postjob" id="postjob">
+								<option value="" selected disabled>Выберите уровень сотрудника</option>
+								<option value="tra">Trainee (15000 руб.)</option>
+								<option value="jun">Junior (30000 руб.)</option>
+								<option value="mid">Middle (80000 руб.)</option>
+								<option value="sen">Senior (150000 руб.)</option>
+							</select>
+						</label>
+					</div>
+
+					<div class="form__item item item-radio">
+						<span class="item__title title">Занятось*</span>
+
+						<div class="form__employment">
+							<label for="ft" class="form__label label checkbox">
+								<span>Полный рабочий день</span>
+
+								<input value="100" id="ft" type="radio" name="employment" class="form__radio">
+								<div class="checkbox__mark"></div>
+							</label>
+
+							<label for="pt" class="form__label label checkbox">
+								<span>Частичная занятость (-30%)</span>
+
+								<input value="30" id="pt" type="radio" name="employment" class="form__radio">
+								<div class="checkbox__mark"></div>
+							</label>
+						</div>
+					</div>
+
+					<button type="submit" class="form__button">сохранить</button>
+				</form>
+			</div>
+		</section>
+
+		<section class="table">
+			<h2 class="table__title title">Список сотрудников</h2>
+
+			<div class="table__wrapper">
+				<div class="table__head">
+					<div class="table__head-title title">Имя</div>
+
+					<div class="table__head-title title">Фамилия</div>
+
+					<div class="table__head-title title">Возраст</div>
+
+					<div class="table__head-title title">Пол</div>
+
+					<div class="table__head-title title">Позиция</div>
+
+					<div class="table__head-title title">Уровень</div>
+
+					<div class="table__head-title title">Зарплата</div>
+
+					<div class="table__head-title title">
+						<img src="img/delete.svg" alt="delete">
+					</div>
+				</div>
+				
+				<div class="table__block">
+					<table class="table__elements">				
+					</table>
+				</div>
+				
+
+				<div class="table__foot">
+					<div class="table__foot-title title">Кол-во сотрудников:</div>
+					<span class="table__foot-workers count" id="workers-count">0</span>
+
+					<div class="table__foot-title title">Общая зарплата:</div>
+					<span class="table__foot-salary count" id="salary-count">0</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div id="overlay" class="overlay">
+		<div id="popup" class="popup">
+			<div class="popup__text">Введите все данные сотрудника!</div>
+
+			<div id="close" class="popup__close">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
