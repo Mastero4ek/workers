@@ -14,7 +14,27 @@
 	<title>Список сотрудников</title>
 </head>
 <body>
-	<main class="main">
+	<main class="main light-theme">
+		<label class="change-label">
+			<div class="toggle">
+				<input class="toggle-state" type="checkbox" name="check">
+
+				<div class="indicator">
+					<div class="indicator-img light">
+						<svg class="icon">
+						  <use xlink:href="img/icons.svg#sun"></use>
+						</svg>
+					</div>
+
+					<div class="indicator-img dark">
+						<svg class="icon">
+						  <use xlink:href="img/icons.svg#moon"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</label>
+
 		<section class="form">
 			<div class="form__wrapper">
 				<h2 class="form__title title">Новый сотрудник</h2>
@@ -40,7 +60,7 @@
 						<span class="item__title title">Возраст*</span>
 
 						<label for="age" class="form__label label">
-							<input type="text" id="age" name="age" class="form__input" placeholder="35">
+							<input type="number" id="age" name="age" class="form__input" placeholder="18-50">
 						</label>
 					</div>
 
@@ -134,7 +154,9 @@
 					<div class="table__head-title title">Зарплата</div>
 
 					<div class="table__head-title title">
-						<img src="img/delete.svg" alt="delete">
+						<svg class="icon">
+						  <use xlink:href="img/icons.svg#delete"></use>
+						</svg>
 					</div>
 				</div>
 				
@@ -155,7 +177,7 @@
 		</section>
 	</main>
 
-	<div id="overlay" class="overlay">
+	<div id="overlay" class="overlay light-theme">
 		<div id="popup" class="popup">
 			<div class="popup__text">Введите все данные сотрудника!</div>
 

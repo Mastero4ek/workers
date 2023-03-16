@@ -1,7 +1,11 @@
-import { Worker, Trainee, Junior, Middle, Senior } from "./classes";
+import { Worker, Trainee, Junior, Middle, Senior } from "./classes"
 
 const workers = () => {
-	const name = document.querySelector('input[id=name]'),
+	const allInputs = document.querySelectorAll('input'),
+		selects = document.querySelectorAll('.form__select'),
+		checkbox = document.querySelectorAll('.form__radio'),
+
+		name = document.querySelector('input[id=name]'),
 		surname = document.querySelector('input[id=surname]'),
 		age = document.querySelector('input[id=age]'),
 
@@ -25,8 +29,7 @@ const workers = () => {
 		salaryCount = document.getElementById('salary-count'),
 
 		overlay = document.getElementById('overlay'),
-		popup = document.getElementById('popup'),
-		close = document.getElementById('close');
+		popup = document.getElementById('popup');
 
 	let workers = JSON.parse(localStorage.getItem('worker-value')) || {};
 
@@ -174,8 +177,29 @@ const workers = () => {
 	}
 
 	const checkInputs = () => {
+		allInputs.forEach((item) => {
+			if(item.value == '') {
+				item.classList.add('error');
+			}
+		});
+
+		selects.forEach((item) => {
+			if(item.value == '') {
+				item.classList.add('error');
+			}
+		});
+
+		if(!Array.from(employment).some((input) => input.checked)) {
+			employment.forEach(item =>  item.nextElementSibling.classList.add('error'))
+		}
+
+		if(!Array.from(gender).some((input) => input.checked)) {
+			gender.forEach(item =>  item.nextElementSibling.classList.add('error'))
+		}
+
 		if (!isString(name.value) || !isString(surname.value) || !isNumber(age.value) ||
-			(!male.checked && !female.checked) || (!fullTime.checked && !partTime.checked)) {
+			(!male.checked && !female.checked) || (!fullTime.checked && !partTime.checked) ||
+			position.value == '' || postJob.value == '') {
 
 			overlay.classList.add('show');
 			popup.style.transform = 'scale(1)';
@@ -185,6 +209,13 @@ const workers = () => {
 			getTotal();
 			renderTotal();
 			reset();
+
+			// checkbox.forEach((item) => {
+			// 	const elem = item.nextElementSibling;
+
+			// 	elem.classList.remove('error');
+			// 	item.checked = false;
+			// });
 
 			localStorage.setItem('workers', JSON.stringify(Worker.workerArr));
 			localStorage.setItem('worker-value', JSON.stringify(workers));
@@ -263,11 +294,6 @@ const workers = () => {
 		fullTime.checked = false;
 		partTime.checked = false;
 	}
-
-	close.addEventListener('click', () => {
-		overlay.classList.remove('show');
-		popup.style.transform = '';
-	});
 
 	form.addEventListener('submit', (event) => {
 		event.preventDefault();
