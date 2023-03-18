@@ -161,6 +161,11 @@ body.dark-theme {
   --error: #ff2e18;
 }
 
+input::placeholder {
+  color: var(--ldTitle);
+  opacity: .5;
+}
+
 .main {
   position: relative;
   display: flex;
@@ -422,7 +427,7 @@ body.dark-theme {
   scrollbar-color: var(--greyShadow) var(--whiteShadow);
   scrollbar-width: thin;
   overflow-y: scroll;
-  max-height: 66vh;
+  max-height: 67.4vh;
 }
 
 ::-webkit-scrollbar {
