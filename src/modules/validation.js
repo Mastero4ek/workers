@@ -25,13 +25,10 @@ const validation = () => {
 		trimSimbol(e);
 
 		if(item.name == 'age') {
+			e.target.value = e.target.value.replace(isAge, "");
+			
 			if(+e.target.value < 18 || +e.target.value > 50) {
 				e.target.value = '';
-			}
-
-			e.target.value = e.target.value.replace(isAge, "");
-
-			if(e.target.value == '') {
 				item.classList.add('error');
 			}
 		} else

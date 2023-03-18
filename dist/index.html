@@ -14,7 +14,9 @@
 	<title>Список сотрудников</title>
 </head>
 <body>
-	<main class="main light-theme">
+	<script>if (localStorage.getItem('theme') === 'dark-theme') document.body.classList.add('dark-theme');</script>
+
+	<main class="main">
 		<label class="change-label">
 			<div class="toggle">
 				<input class="toggle-state" type="checkbox" name="check">
@@ -161,8 +163,7 @@
 				</div>
 				
 				<div class="table__block">
-					<table class="table__elements">				
-					</table>
+					<table class="table__elements"></table>
 				</div>
 				
 
@@ -177,7 +178,7 @@
 		</section>
 	</main>
 
-	<div id="overlay" class="overlay light-theme">
+	<div id="overlay" class="overlay">
 		<div id="popup" class="popup">
 			<div class="popup__text">Введите все данные сотрудника!</div>
 
@@ -186,6 +187,16 @@
 				<span></span>
 			</div>
 		</div>
-	</div>	
+	</div>
+
+<!-- 	<div id="preloader" class="preloader light-theme">
+		<div class='preloader-dots'>
+	    	<div class='dot'></div>
+			<div class='dot'></div>
+			<div class='dot'></div>
+			<div class='dot'></div>
+			<div class='dot'></div>
+		</div>
+	</div> -->
 </body>
 </html>

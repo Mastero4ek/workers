@@ -210,13 +210,6 @@ const workers = () => {
 			renderTotal();
 			reset();
 
-			// checkbox.forEach((item) => {
-			// 	const elem = item.nextElementSibling;
-
-			// 	elem.classList.remove('error');
-			// 	item.checked = false;
-			// });
-
 			localStorage.setItem('workers', JSON.stringify(Worker.workerArr));
 			localStorage.setItem('worker-value', JSON.stringify(workers));
 		}

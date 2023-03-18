@@ -113,7 +113,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.light-theme {
+:root {
   --mainBack: rgba(120, 120, 120, .5);
 
   --lightGreyTitle: #616161;
@@ -137,7 +137,7 @@ input[type="number"] {
   --error: #ff182b;
 }
 
-.dark-theme {
+body.dark-theme {
   --mainBack: rgba(57, 29, 0, .9);
 
   --lightGreyTitle: rgba(163, 138, 23, .5);
@@ -547,11 +547,6 @@ input[type="number"] {
   transition: all .4s;
 }
 
-.show {
-  opacity: 1;
-  visibility: visible;
-}
-
 .popup {
   display: flex;
   flex-direction: column;
@@ -607,6 +602,78 @@ input[type="number"] {
 
 .popup__close:hover > span {
   background-color: var(--greyShadow);
+}
+
+/*.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+
+.preloader-dots .dot {
+  display: inline-block;
+  background: var(--ldTitle);
+  height: 1rem;
+  width: 1rem;
+  opacity: 0.3;
+  border-radius: 50%;
+  animation: moveit 1.8s infinite;
+}
+
+.dot:not(:last-child) {
+  margin-right: .5rem;
+}
+
+.dot:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: .45s;
+}
+
+.dot:nth-child(5) {
+  animation-delay: .6s;
+}
+
+@keyframes moveit {
+  0% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-2rem);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateY(.3rem);
+    opacity: 0.8;
+  }
+  85% {
+    transform: translateY(-.3rem);
+  }
+}*/
+
+.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .error {
