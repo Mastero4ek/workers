@@ -16,7 +16,7 @@ const validation = () => {
 	};
 
 	const capitalize = (e) => {
-		e.target.value = e.target.value.replace(/(^|\s)\S/g, function(str) {
+		e.target.value = e.target.value.replace(/(^|\s)\S/g, function (str) {
 			return str.toUpperCase();
 		});
 	};
@@ -24,22 +24,22 @@ const validation = () => {
 	const validationInput = (item, e) => {
 		trimSimbol(e);
 
-		if(item.name == 'age') {
+		if (item.name == 'age') {
 			e.target.value = e.target.value.replace(isAge, "");
-			
-			if(+e.target.value < 18 || +e.target.value > 50) {
+
+			if (+e.target.value < 18 || +e.target.value > 50) {
 				e.target.value = '';
 				item.classList.add('error');
 			}
 		} else
-		if(item.name == 'name' | item.name == 'surname') {
-			e.target.value = e.target.value.replace(isCyrillic, "");
-			capitalize(event);
+			if (item.name == 'name' | item.name == 'surname') {
+				e.target.value = e.target.value.replace(isCyrillic, "");
+				capitalize(event);
 
-			if(e.target.value == '') {
-				item.classList.add('error');
+				if (e.target.value == '') {
+					item.classList.add('error');
+				}
 			}
-		}
 	};
 
 	selects.forEach(item => item.addEventListener('change', () => item.classList.remove('error')));
@@ -47,13 +47,13 @@ const validation = () => {
 
 	checkbox.forEach((item) => {
 		item.addEventListener('change', (e) => {
-			if(item.checked) {
+			if (item.checked) {
 				const thisMark = e.target.nextElementSibling,
 					parentElem = e.target.parentNode;
 
 				thisMark.classList.remove('error');
 
-				if(parentElem.previousElementSibling) {
+				if (parentElem.previousElementSibling) {
 					const prevElem = parentElem.previousElementSibling;
 					prevElem.lastElementChild.classList.remove('error');
 				} else {
@@ -65,7 +65,7 @@ const validation = () => {
 	});
 
 	selects.forEach(item => item.addEventListener('blur', () => {
-		if(item.value == '') {
+		if (item.value == '') {
 			item.classList.add('error');
 		}
 	}));

@@ -178,23 +178,23 @@ const workers = () => {
 
 	const checkInputs = () => {
 		allInputs.forEach((item) => {
-			if(item.value == '') {
+			if (item.value == '') {
 				item.classList.add('error');
 			}
 		});
 
 		selects.forEach((item) => {
-			if(item.value == '') {
+			if (item.value == '') {
 				item.classList.add('error');
 			}
 		});
 
-		if(!Array.from(employment).some((input) => input.checked)) {
-			employment.forEach(item =>  item.nextElementSibling.classList.add('error'))
+		if (!Array.from(employment).some((input) => input.checked)) {
+			employment.forEach(item => item.nextElementSibling.classList.add('error'))
 		}
 
-		if(!Array.from(gender).some((input) => input.checked)) {
-			gender.forEach(item =>  item.nextElementSibling.classList.add('error'))
+		if (!Array.from(gender).some((input) => input.checked)) {
+			gender.forEach(item => item.nextElementSibling.classList.add('error'))
 		}
 
 		if (!isString(name.value) || !isString(surname.value) || !isNumber(age.value) ||

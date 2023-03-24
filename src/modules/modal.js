@@ -5,7 +5,7 @@ const modal = () => {
 	overlay.addEventListener('click', (e) => {
 		const target = e.target.classList.contains('overlay');
 
-		if(target || e.target.matches('.popup__close') || e.target.matches('.popup__close > span')) {
+		if (target || e.target.matches('.popup__close') || e.target.matches('.popup__close > span')) {
 			overlay.classList.remove('show');
 			popup.style.transform = '';
 		}

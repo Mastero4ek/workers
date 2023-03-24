@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	
+
 	<script defer src="./js/main.js"></script>
 
 	<title>Список сотрудников</title>
 </head>
+
 <body>
 	<script>if (localStorage.getItem('theme') === 'dark-theme') document.body.classList.add('dark-theme');</script>
 
@@ -24,13 +27,13 @@
 				<div class="indicator">
 					<div class="indicator-img light">
 						<svg class="icon">
-						  <use xlink:href="img/icons.svg#sun"></use>
+							<use xlink:href="img/icons.svg#sun"></use>
 						</svg>
 					</div>
 
 					<div class="indicator-img dark">
 						<svg class="icon">
-						  <use xlink:href="img/icons.svg#moon"></use>
+							<use xlink:href="img/icons.svg#moon"></use>
 						</svg>
 					</div>
 				</div>
@@ -57,7 +60,7 @@
 							<input type="text" id="surname" name="surname" class="form__input" placeholder="Иванов">
 						</label>
 					</div>
-						
+
 					<div class="form__item item">
 						<span class="item__title title">Возраст*</span>
 
@@ -97,7 +100,7 @@
 							</select>
 						</label>
 					</div>
-						
+
 					<div class="form__item item">
 						<span class="item__title title">Уровень*</span>
 						<label for="postjob" class="form__label label">
@@ -157,15 +160,15 @@
 
 					<div class="table__head-title title">
 						<svg class="icon">
-						  <use xlink:href="img/icons.svg#delete"></use>
+							<use xlink:href="img/icons.svg#delete"></use>
 						</svg>
 					</div>
 				</div>
-				
+
 				<div class="table__block">
 					<table class="table__elements"></table>
 				</div>
-				
+
 
 				<div class="table__foot">
 					<div class="table__foot-title title">Кол-во сотрудников:</div>
@@ -189,4 +192,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

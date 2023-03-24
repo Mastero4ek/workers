@@ -5,7 +5,7 @@ const changeTheme = () => {
 	localStorage.getItem('theme-btn') === 'true' ? toggleThemeBtn.checked = true : toggleThemeBtn.checked = false;
 
 	toggleThemeBtn.addEventListener('change', () => {
-		if(toggleThemeBtn.checked) {
+		if (toggleThemeBtn.checked) {
 			body.classList.toggle('dark-theme');
 
 			localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme');
